@@ -21,19 +21,6 @@ interface Authorization {
     version: "1.0"
 }
 
-function setHeaders(consumerKey: String, consumerSecret: String, timestamp: Number): HeadersInit {
-    return {
-        consumerKey,
-        consumerSecret,
-        timestamp: Math.floor(Date.now() / 1000),
-        nonce: Math.random(),
-        method: "PLAINTEXT",
-
-
-    }
-}
-
-
 
 
 export class Server extends Consumer {
