@@ -1,3 +1,4 @@
-import { Consumer } from '@/client/consumer';
+import { Wrapper } from "./wrapper";
 
-export class User extends Consumer {}
+
+export class User extends Wrapper {}
