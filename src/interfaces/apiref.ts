@@ -27,17 +27,15 @@ export interface METHOD {
 /** /developers/api/services/apiref/#module */
 export interface MODULE {
     name?: string;
+    title?: string;
     brief_description?: string;
     description?: string;
     beta?: boolean;
-    is_deprecated?: boolean;
     methods?: string[];
     submodules?: string[];
 }
 
-/** 
- * Represents a single OAuth scope returned by the scopes endpoint 
- */
+
 export interface SCOPE {
-    description?: string;
+    developers_description?: string;
 }
