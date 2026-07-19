@@ -1,6 +1,4 @@
-import { BaseURL, Module } from "@/globals"
-import { APISRV, APIREF } from "@/globals"
-import { MOBILE_USOS_CONFIG } from "@/services/apisrv"
+import { University, Module } from "@/globals"
 
 /**
  * @description Multi-purpose API wrapper for all of the endpoint connections for our USOS app.
@@ -13,8 +11,8 @@ export class Wrapper {
     protected consumerSecret: string
     protected headers: HeadersInit
 
-    constructor(base: BaseURL, consumerKey: string, consumerSecret: string) {
-        this.url = new URL(`https://${base}`)
+    constructor(uni: University, consumerKey: string, consumerSecret: string) {
+        this.url = new URL(`https://${uni}`)
         this.consumerKey = consumerKey
         this.consumerSecret = consumerSecret
         this.headers = {}
@@ -40,7 +38,7 @@ export class Wrapper {
         })
     }
     
-    protected async POST<M extends Module, T = any>(module: M, method: keyof M, headers: HeadersInit = this.headers, params?: Record<string, string>): Promise<T> {
+    public async POST<M extends Module, T = any>(module: M, method: keyof M, headers: HeadersInit = this.headers, params?: Record<string, string>): Promise<T> {
         try {
             const response = await this.__buildFetch(module, method, "POST", headers, params);
             if (!response.ok) {
@@ -52,7 +50,7 @@ export class Wrapper {
         }
     }
 
-    protected async GET<M extends Module, T = any>(module: M, method: keyof M, headers: HeadersInit = this.headers, params?: Record<string, string>): Promise<T> {
+    public async GET<M extends Module, T = any>(module: M, method: keyof M, headers: HeadersInit = this.headers, params?: Record<string, string>): Promise<T> {
         try {
             const response = await this.__buildFetch(module, method, "GET", headers, params)
             if (!response.ok) { 
