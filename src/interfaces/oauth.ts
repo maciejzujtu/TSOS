@@ -1,5 +1,6 @@
 // List of methods for OAuth endpoint module
 export enum OAUTH {
+    ROOT                = "services/oauth",
     ACCESS_TOKEN        = "services/oauth/access_token",
     AUTHORIZE           = "services/oauth/authorize",
     PROXY               = "services/oauth/proxy",
@@ -41,18 +42,25 @@ export type RequestTokenScopes =
     | "theses_protocols_write"
 
 
-
-// !!! TODO 
-// Do it later it's too retarded
-export interface PROXY {
+/** /developers/api/services/oauth/#access_token */
+export interface ACCESS_TOKEN {
+    oauth_token: string
+    oauth_token_secret: string
 }
 
-
+/** /developers/api/services/oauth/#proxy */
+export interface PROXY {
+    method: string
+    parameters?: string | Record<string, any>
+    scopes?: RequestTokenScopes[] | "all"
+    as_user_id?: string
+}
 
 /** /developers/api/services/oauth/#request_token */
 export interface REQUEST_TOKEN {
-    oauth_callback: "oob" | string | URL
-    scopes?: RequestTokenScopes[]
+    oauth_token: string
+    oauth_token_secret: string
+    oauth_callback_confirmed?: boolean
 }
 
 /** /developers/api/services/oauth/#revoke_consumer_key */
@@ -67,3 +75,26 @@ export interface REVOKE_CONSUMER_KEY {
 export interface REVOKE_TOKEN {
     deauthorize?: boolean
 }
+
+
+
+// Mappings
+
+export interface OAUTH_REQUEST {
+    ACCESS_TOKEN:        { oauth_verifier: string }
+    AUTHORIZE:           { oauth_token: string; interactivity?: "minimal" | "confirm_user" }
+    PROXY:               PROXY
+    REQUEST_TOKEN:       { oauth_callback: string; scopes?: string | RequestTokenScopes[] }
+    REVOKE_CONSUMER_KEY: REVOKE_CONSUMER_KEY
+    REVOKE_TOKEN:        REVOKE_TOKEN
+}
+
+export interface OAUTH_RESPONSE {
+    ACCESS_TOKEN:        ACCESS_TOKEN
+    REQUEST_TOKEN:       REQUEST_TOKEN
+    AUTHORIZE:           never
+    PROXY:               any
+    REVOKE_CONSUMER_KEY: { success: boolean }
+    REVOKE_TOKEN:        { success: boolean }
+}
+

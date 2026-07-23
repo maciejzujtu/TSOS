@@ -1,5 +1,5 @@
-// List of methods for APISRV endpoint module
 export enum APISRV {
+    ROOT                = "services/apisrv",
     CONSUMER            = "services/apisrv/consumer",
     INSTALLATION        = "services/apisrv/installation",
     INSTALLATIONS       = "services/apisrv/installations",
@@ -83,4 +83,24 @@ export interface MOBILE_USOS_CONFIG {
     enforce_biometric_for_staff?: boolean;
     enforce_biometric_for_all?: boolean;
     nfc_salt?: string;
+}
+
+
+
+// Mappings
+
+export interface APISRV_REQUEST {
+    CONSUMER:           { fields?: string | ConsumerFields[] }
+    INSTALLATION:       { fields?: string | InstallationFields[] }
+    INSTALLATIONS:      { fields?: string }
+    MOBILE_USOS_CONFIG: { fields?: string | MobileConfigFields[] }
+    NOW:                Record<string, never>
+}
+
+export interface APISRV_RESPONSE {
+    CONSUMER:           CONSUMER
+    INSTALLATION:       INSTALLATION
+    INSTALLATIONS:      INSTALLATIONS
+    MOBILE_USOS_CONFIG: MOBILE_USOS_CONFIG;
+    NOW:                string
 }

@@ -1,11 +1,9 @@
 import { APISRV, CONSUMER, INSTALLATION, INSTALLATIONS, MOBILE_USOS_CONFIG } from '@/interfaces/apisrv'
 import { ConsumerFields, InstallationFields, MobileConfigFields } from '@/interfaces/apisrv'
-import { Server } from '@/client/server'
-
-// services/apisrv/ module
+import { AuthProvider } from '@/globals'
 
 export class ApiSrv {
-    constructor(private api: Server) {}
+    constructor(private api: AuthProvider) {}
 
     // /services/apisrv/consumer
     public async getConsumer(fields: ConsumerFields[]): Promise<CONSUMER> {
