@@ -1,7 +1,6 @@
-export { Server } from '@/client/server'
-export { University, Module } from '@/globals'
+// Service exports
+export * from '@/services/apiref/index'
+export * from '@/services/apisrv/index'
 
-// Interfaces
-export { APIREF } from '@/interfaces/apiref'
-export { APISRV } from '@/interfaces/apisrv'
-export { OAUTH } from '@/interfaces/oauth'
+// Client exports
+export * from '@/client/index'
