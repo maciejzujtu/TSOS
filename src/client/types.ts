@@ -1,22 +1,19 @@
-import { ApirefModules } from "@/services/apiref/index"
+import type { AccessTokenCredentials, ConsumerCredentials } from '@/core/auth'
 
-// ==========================================
-// Master Mappings
-// ==========================================
+export interface BaseClientOptions {
+    baseUrl: string | URL
+    fetch?: typeof globalThis.fetch
+}
 
-export type Modules =
-    | typeof ApirefModules
+export interface ClientOptions extends BaseClientOptions {
+    consumer?: ConsumerCredentials
+}
 
+export interface UserClientOptions extends BaseClientOptions {
+    consumer: ConsumerCredentials
+    accessToken: AccessTokenCredentials
+}
 
-// ==========================================
-// University endpoints & mappings
-// ==========================================
-
-export const JAGIELLONIAN_UNIVERSITY = 'apps.usos.uj.edu.pl'
-export const WARSAW_UNIVERSITY = 'usosapps.uw.edu.pl'
-export const WROCLAW_UNIVERSITY = 'usosapps.uni.wroc.pl'
-
-export type University = 
-    | typeof JAGIELLONIAN_UNIVERSITY
-    | typeof WARSAW_UNIVERSITY
-    | typeof WROCLAW_UNIVERSITY
+export interface AdminClientOptions extends BaseClientOptions {
+    consumer: ConsumerCredentials
+}
