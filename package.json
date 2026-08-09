@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "test": "esno tests/modules.test.ts",
+    "test": "esno --test tests/**/*.test.ts",
     "typecheck": "tsc --noEmit"
   },
   "devDependencies": {
