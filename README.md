@@ -58,7 +58,7 @@ Each university controls its own API version, Consumer credentials, and availabl
 | [API guide](docs/api.md) | Client construction, services, method groups, parameters, return values, and endpoint metadata. |
 | [Authentication](docs/authentication.md) | OAuth 1.0a flow, scopes, User clients, administrative access, revocation, and security. |
 | [Error handling](docs/errors.md) | TSOS error classes and application error-handling patterns. |
-| [Contributing](CONTRIBUTING.md) | Development setup, endpoint implementation process, tests, and security rules. |
+| [Development](#development) | Local setup, quality checks, and package verification. |
 | [USOS API reference](https://apps.usos.uj.edu.pl/developers/api/) | Installation-specific authoritative method documentation. |
 
 ## Supported modules
@@ -124,38 +124,3 @@ try {
 ```
 
 Read [Error handling](docs/errors.md) before adding retries, logging, or user-facing error messages.
-
-## Development
-
-```sh
-npm ci
-npm run typecheck
-npm test
-npm run build
-npm run pack:check
-npm run test:package
-```
-
-| Command | Purpose |
-| --- | --- |
-| `npm test` | Run unit and service mapping tests without external network access. |
-| `npm run typecheck` | Check all source and test TypeScript. |
-| `npm run build` | Create clean ESM JavaScript and declaration output in `dist/`. |
-| `npm run pack:check` | Verify the publishable tarball contents. |
-| `npm run test:package` | Pack, install, import, and exercise TSOS from a separate temporary project. |
-
-## Contributing
-
-See [CONTRIBUTING.md](CONTRIBUTING.md). In particular, keep new endpoints aligned with their USOS metadata, add test coverage, and never run write-endpoint tests against production user data.
-
-## Roadmap
-
-Use the [issue tracker](https://github.com/maciejzujtu/TSOS/issues) and project board for planned modules and releases. API coverage expands module by module; beta, internal, and sensitive write endpoints need explicit review before implementation.
-
-## Security
-
-Copy `.env.example` to `.env` only for local development. Never commit Consumer Secrets, Access Token Secrets, or real personal-data samples. Request only the scopes and fields a feature needs.
-
-## Licence
-
-TSOS is currently marked `UNLICENSED`. Choose and add a licence before publishing it for third-party use.

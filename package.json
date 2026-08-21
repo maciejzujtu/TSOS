@@ -15,8 +15,7 @@
   "files": [
     "dist",
     "README.md",
-    "docs",
-    "CONTRIBUTING.md"
+    "docs"
   ],
   "engines": {
     "node": ">=20"
