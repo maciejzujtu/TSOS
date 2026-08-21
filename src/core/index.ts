@@ -32,4 +32,6 @@ export {
     UsosApiError,
     UsosAuthenticationError,
     UsosConfigurationError,
+    UsosNetworkError,
 } from '@/core/errors'
+export type { UsosNetworkErrorKind } from '@/core/errors'
