@@ -36,7 +36,7 @@
     "usos-api",
     "typescript"
   ],
-  "license": "UNLICENSED",
+  "license": "MIT",
   "scripts": {
     "build": "npm run clean && tsc --project tsconfig.build.json && tsc-alias --project tsconfig.build.json --resolve-full-paths --resolve-full-extension .js",
     "clean": "node scripts/clean-dist.mjs",
