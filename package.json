@@ -28,6 +28,9 @@
     "url": "https://github.com/maciejzujtu/TSOS/issues"
   },
   "homepage": "https://github.com/maciejzujtu/TSOS#readme",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
   "keywords": [
     "usos",
     "usos-api",
