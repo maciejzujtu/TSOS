@@ -23,6 +23,7 @@ export abstract class BaseClient<Auth extends AuthContext> {
 
     protected readonly requester: HttpRequester<Auth>
     protected readonly fetchImplementation: typeof globalThis.fetch
+    protected readonly timeoutMs?: number
 
     protected constructor(
         options: BaseClientOptions,
@@ -30,10 +31,12 @@ export abstract class BaseClient<Auth extends AuthContext> {
     ) {
         this.baseUrl = new URL(options.baseUrl)
         this.fetchImplementation = options.fetch ?? globalThis.fetch
+        this.timeoutMs = options.timeoutMs
         this.requester = new HttpRequester({
             baseUrl: this.baseUrl,
             auth,
-            fetch: this.fetchImplementation
+            fetch: this.fetchImplementation,
+            timeoutMs: this.timeoutMs,
         })
 
         this.apiref = new ApiRefService(this.requester)

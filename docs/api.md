@@ -23,8 +23,11 @@ Pass a custom `fetch` implementation when testing or when your runtime needs one
 const client = new UsosClient({
     baseUrl: "https://apps.usos.uj.edu.pl",
     fetch: myFetch,
+    timeoutMs: 10_000,
 })
 ```
+
+`timeoutMs` sets the default timeout for every request issued through that client. It is preserved by `withAccessToken(...)` and `asAdministrator()`. Advanced users of the exported `HttpRequester` can also pass an `AbortSignal` or per-request `timeoutMs` in `RequestOptions`.
 
 For Consumer, User, and Administrative authentication, see [Authentication](authentication.md).
 

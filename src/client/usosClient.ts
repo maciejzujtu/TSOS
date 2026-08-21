@@ -45,6 +45,7 @@ export class UsosClient extends BaseClient<UsosClientAuth> {
         return new UserClient({
             baseUrl: this.baseUrl,
             fetch: this.fetchImplementation,
+            timeoutMs: this.timeoutMs,
             consumer: this.consumer,
             accessToken,
         })
@@ -60,6 +61,7 @@ export class UsosClient extends BaseClient<UsosClientAuth> {
         return new AdminClient({
             baseUrl: this.baseUrl,
             fetch: this.fetchImplementation,
+            timeoutMs: this.timeoutMs,
             consumer: this.consumer,
         })
     }
