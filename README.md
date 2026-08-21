@@ -18,11 +18,20 @@ An ESM-first TypeScript client for the [USOS API](https://apps.usos.uj.edu.pl/de
 
 TSOS requires Node.js 20 or newer.
 
+TSOS is published through GitHub Packages. In the consuming project, create an `.npmrc` file with the GitHub Packages registry and an access token that has `read:packages` permission:
+
+```ini
+@maciejzujtu:registry=https://npm.pkg.github.com
+//npm.pkg.github.com/:_authToken=${GITHUB_PACKAGES_TOKEN}
+```
+
+Then install it:
+
 ```sh
 npm install @maciejzujtu/tsos
 ```
 
-The package is ready to install from a tarball today. Publish it to npm before using the command above from another project.
+Set `GITHUB_PACKAGES_TOKEN` in your shell before installing. The first GitHub Package release is created automatically when a GitHub Release is published.
 
 ## Quick start
 
@@ -124,3 +133,7 @@ try {
 ```
 
 Read [Error handling](docs/errors.md) before adding retries, logging, or user-facing error messages.
+
+## License
+
+[MIT](LICENSE) © 2026 maciejzujtu

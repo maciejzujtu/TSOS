@@ -25,4 +25,19 @@ export {
     UsosApiError,
     UsosAuthenticationError,
     UsosConfigurationError,
+    UsosNetworkError,
 } from '@/core/errors'
+export type { UsosNetworkErrorKind } from '@/core/errors'
+
+export { HttpRequester } from '@/core/requester'
+export type { RequestOptions, RequesterOptions, RequestExecutor } from '@/core/requester'
+
+export type {
+    Requirement,
+    ResponseFormat,
+    AuthRequirements,
+    EndpointDefinition,
+    AnyEndpoint,
+    ParamsOf,
+    ResultOf,
+} from '@/core/endpoint'
