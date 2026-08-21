@@ -1,14 +1,51 @@
 {
+  "name": "@maciejzujtu/tsos",
+  "version": "0.1.0",
+  "description": "TypeScript client for the USOS API.",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maciejzujtu/TSOS.git"
+  },
+  "bugs": {
+    "url": "https://github.com/maciejzujtu/TSOS/issues"
+  },
+  "homepage": "https://github.com/maciejzujtu/TSOS#readme",
+  "keywords": [
+    "usos",
+    "usos-api",
+    "typescript"
+  ],
+  "license": "UNLICENSED",
   "scripts": {
-    "test": "esno --test tests/**/*.test.ts",
-    "typecheck": "tsc --noEmit"
+    "build": "npm run clean && tsc --project tsconfig.build.json && tsc-alias --project tsconfig.build.json --resolve-full-paths --resolve-full-extension .js",
+    "clean": "node scripts/clean-dist.mjs",
+    "pack:check": "npm run build && npm pack --dry-run --ignore-scripts",
+    "test": "esno --test tests/client/**/*.test.ts tests/core/**/*.test.ts tests/services/**/*.test.ts",
+    "test:package": "npm run build && esno --test tests/package/package-smoke.test.ts",
+    "typecheck": "tsc --noEmit",
+    "prepack": "npm run build"
   },
   "devDependencies": {
     "@types/node": "^26.1.1",
     "esno": "^4.8.0",
+    "tsc-alias": "^1.9.2",
     "typescript": "^7.0.2"
-  },
-  "dependencies": {
-    "dotenv": "^17.4.2"
   }
 }
