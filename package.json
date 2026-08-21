@@ -39,7 +39,7 @@
     "build": "npm run clean && tsc --project tsconfig.build.json && tsc-alias --project tsconfig.build.json --resolve-full-paths --resolve-full-extension .js",
     "clean": "node scripts/clean-dist.mjs",
     "pack:check": "npm run build && npm pack --dry-run --ignore-scripts",
-    "test": "esno --test tests/client/**/*.test.ts tests/core/**/*.test.ts tests/services/**/*.test.ts",
+    "test": "esno --test tests/client/*.test.ts tests/core/*.test.ts tests/services/*.test.ts",
     "test:package": "npm run build && esno --test tests/package/package-smoke.test.ts",
     "typecheck": "tsc --noEmit",
     "prepack": "npm run build"
