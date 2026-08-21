@@ -3,7 +3,7 @@ import test from "node:test"
 
 import { ApiSrvService } from "@"
 
-import { MockRequestExecutor } from "../helpers/mockRequestExecutor"
+import { MockRequestExecutor } from "../helpers/mockRequestExecutor.js"
 
 test("APISRV maps selectors, arrays, and raw server time", async () => {
     const request = new MockRequestExecutor()

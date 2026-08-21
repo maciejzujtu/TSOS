@@ -3,7 +3,7 @@ import test from "node:test"
 
 import { ApiRefService, attendanceEndpoints } from "@"
 
-import { MockRequestExecutor } from "../helpers/mockRequestExecutor"
+import { MockRequestExecutor } from "../helpers/mockRequestExecutor.js"
 
 test("APIREF maps endpoint metadata and preserves array contracts", async () => {
     const request = new MockRequestExecutor()

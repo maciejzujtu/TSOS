@@ -3,7 +3,7 @@ import test from "node:test"
 
 import { TermsService, termsEndpoints } from "@"
 
-import { MockRequestExecutor } from "../helpers/mockRequestExecutor"
+import { MockRequestExecutor } from "../helpers/mockRequestExecutor.js"
 
 test("Terms maps all official endpoints", async () => {
     const request = new MockRequestExecutor()

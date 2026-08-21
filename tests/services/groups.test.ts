@@ -3,7 +3,7 @@ import test from "node:test"
 
 import { GroupsService, groupsEndpoints } from "@"
 
-import { MockRequestExecutor } from "../helpers/mockRequestExecutor"
+import { MockRequestExecutor } from "../helpers/mockRequestExecutor.js"
 
 test("Groups maps all nine official endpoints and formats composite IDs", async () => {
     const request = new MockRequestExecutor()

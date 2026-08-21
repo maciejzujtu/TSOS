@@ -3,7 +3,7 @@ import test from "node:test"
 
 import { FacService, facEndpoints } from "@"
 
-import { MockRequestExecutor } from "../helpers/mockRequestExecutor"
+import { MockRequestExecutor } from "../helpers/mockRequestExecutor.js"
 
 test("Fac maps all official endpoints", async () => {
     const request = new MockRequestExecutor()

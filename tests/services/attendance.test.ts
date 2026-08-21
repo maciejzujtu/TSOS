@@ -3,7 +3,7 @@ import test from "node:test"
 
 import { AttendanceService } from "@"
 
-import { MockRequestExecutor } from "../helpers/mockRequestExecutor"
+import { MockRequestExecutor } from "../helpers/mockRequestExecutor.js"
 
 test("Attendance maps all read endpoints", async () => {
     const request = new MockRequestExecutor()

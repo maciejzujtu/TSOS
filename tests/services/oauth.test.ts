@@ -3,7 +3,7 @@ import test from "node:test"
 
 import { OAuthService, attendanceEndpoints, oauthEndpoints } from "@"
 
-import { MockRequestExecutor } from "../helpers/mockRequestExecutor"
+import { MockRequestExecutor } from "../helpers/mockRequestExecutor.js"
 
 test("OAuth maps token flows, proxy typing, and revocation", async () => {
     const request = new MockRequestExecutor()
