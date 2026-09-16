@@ -13,11 +13,8 @@ import { OAuth1Signer } from '@/core/oauth1Signer'
 export interface RequestOptions<Params> {
     params?: Params
     headers?: HeadersInit
-    /** Cancels this individual request without affecting other client requests. */
     signal?: AbortSignal
-    /** Overrides the client's request timeout for this individual request. */
     timeoutMs?: number
-    // Used for Token Exchange process
     token?: AccessTokenCredentials
     oauthCallback?: string
 }
@@ -26,7 +23,6 @@ export interface RequesterOptions<Auth extends AuthContext> {
     baseUrl: string | URL
     auth: Auth
     fetch?: typeof globalThis.fetch
-    /** Default timeout for every request made by this requester. */
     timeoutMs?: number
 }
 
