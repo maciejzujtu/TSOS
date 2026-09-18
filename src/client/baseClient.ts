@@ -3,10 +3,14 @@ import { HttpRequester } from '@/core/requester'
 
 import { ApiRefService } from '@/services/apiref/service'
 import { ApiSrvService } from '@/services/apisrv/service'
+import { CalendarService } from '@/services/calendar/service'
 import { CoursesService } from '@/services/courses/service'
 import { FacService } from '@/services/fac/service'
+import { GradesService } from '@/services/grades/service'
 import { GroupsService } from '@/services/groups/service'
+import { ProgsService } from '@/services/progs/service'
 import { TermsService } from '@/services/terms/service'
+import { TtService } from '@/services/tt/service'
 import { UsersService } from '@/services/users/service'
 
 import type { BaseClientOptions } from '@/client/types'
@@ -15,11 +19,15 @@ export abstract class BaseClient<Auth extends AuthContext> {
     public readonly baseUrl: URL
     public readonly apiref: ApiRefService
     public readonly apisrv: ApiSrvService
+    public readonly calendar: CalendarService
     public readonly terms: TermsService
     public readonly fac: FacService
     public readonly courses: CoursesService
+    public readonly grades: GradesService
     public readonly users: UsersService
     public readonly groups: GroupsService
+    public readonly progs: ProgsService
+    public readonly tt: TtService
 
     protected readonly requester: HttpRequester<Auth>
     protected readonly fetchImplementation: typeof globalThis.fetch
@@ -41,10 +49,14 @@ export abstract class BaseClient<Auth extends AuthContext> {
 
         this.apiref = new ApiRefService(this.requester)
         this.apisrv = new ApiSrvService(this.requester)
+        this.calendar = new CalendarService(this.requester)
         this.terms = new TermsService(this.requester)
         this.fac = new FacService(this.requester)
         this.courses = new CoursesService(this.requester)
+        this.grades = new GradesService(this.requester)
         this.users = new UsersService(this.requester)
         this.groups = new GroupsService(this.requester)
+        this.progs = new ProgsService(this.requester)
+        this.tt = new TtService(this.requester)
     }
 }
