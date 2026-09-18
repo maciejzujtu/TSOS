@@ -117,6 +117,44 @@ export interface UpdateGradeParams {
     date_acquisition?: string | null
 }
 
+export interface CourseEditionGradesOptions {
+    courseId: CourseId
+    termId: TermId
+    fields?: readonly GradeFields[]
+}
+
+export interface ExamGradesOptions {
+    examId: ExamId
+    userId?: UserId
+    fields?: readonly GradeFields[]
+}
+
+export interface GradeOptions extends ExamGradesOptions {
+    examSessionNumber: ExamSessionNumber
+}
+
+export interface LatestGradesOptions {
+    days?: number
+    fields?: readonly GradeFields[]
+}
+
+export interface TermGradesOptions {
+    termIds: readonly TermId[]
+    courseIds?: readonly CourseId[]
+    fields?: readonly GradeFields[]
+}
+
+export interface UpdateGradeOptions {
+    studentId: UserId
+    examId: ExamId
+    examSessionNumber: ExamSessionNumber
+    valueSymbol?: string | null
+    comment?: string | null
+    privateComment?: string | null
+    dateModified?: string | null
+    dateAcquisition?: string | null
+}
+
 export type LegacyTermGrades = Record<
     TermId,
     Record<CourseId, ExamGrades | null> | null
