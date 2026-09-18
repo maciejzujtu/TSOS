@@ -134,7 +134,7 @@ TSOS does not automatically retry requests. Mutating operations must not be retr
 | API statistics | — | 0 / 2 | Not implemented | API method usage statistics. |
 | Attendance | `userClient.attendance` | 10 / 10 | `UserClient` | Attendance lists and attendance changes. |
 | Binary storage | — | 0 / 15 | Not implemented | Binary data storage and retrieval. |
-| Calendar | — | 0 / 2 | Not implemented | University calendar events. |
+| Calendar | `client.calendar` | 2 / 2 | All clients; operation-specific authorization | University calendar events. |
 | Cards | — | 0 / 12 | Not implemented | Student and employee ID cards. |
 | Courses | `client.courses` | 17 / 17 | All clients | Courses, editions, units, roles, and ECTS data. |
 | Credits | — | 0 / 2 | Not implemented | Study-credit information. |
@@ -150,7 +150,7 @@ TSOS does not automatically retry requests. Mutating operations must not be retr
 | Faculty permissions | — | 0 / 8 | Not implemented | Per-faculty permissions. |
 | File sharing | — | 0 / 3 | Not implemented | File-sharing operations. |
 | Geography | — | 0 / 8 | Not implemented | Buildings, rooms, and geographical data. |
-| Grades | — | 0 / 11 | Not implemented | Student grade information. |
+| Grades | `client.grades` | 11 / 11 | All clients; operation-specific authorization | Student grade information and administrative updates. |
 | Course groups | `client.groups` | 9 / 9 | All clients | Class groups and participant relationships. |
 | University guide | — | 0 / 7 | Not implemented | University guide information. |
 | Housing | — | 0 / 24 | Not implemented | Dormitories and student housing. |
@@ -169,14 +169,14 @@ TSOS does not automatically retry requests. Mutating operations must not be retr
 | PIT declarations | — | 0 / 3 | Not implemented | Polish tax declarations. |
 | Placement tests | — | 0 / 6 | Not implemented | Placement-test registration and results. |
 | Primary groups | — | 0 / 13 | Not implemented | User primary groups. |
-| Study programmes | — | 0 / 8 | Not implemented | Student programme information. |
+| Study programmes | `client.progs` | 8 / 8 | All clients; operation-specific authorization | Student programme information. |
 | Registrations | — | 0 / 18 | Not implemented | University course registrations. |
 | Clearance slips | — | 0 / 27 | Not implemented | Student clearance slips. |
 | Statements | — | 0 / 7 | Not implemented | Electronic statements and signatures. |
 | Surveys | — | 0 / 10 | Not implemented | Satisfaction surveys. |
 | Academic terms | `client.terms` | 4 / 4 | All clients | Academic term search and retrieval. |
 | Theses | — | 0 / 11 | Not implemented | Theses and diplomas. |
-| Timetables | — | 0 / 12 | Not implemented | Activity timetables. |
+| Timetables | `client.tt` | 12 / 12 | All clients; operation-specific authorization | Activity timetables and calendar feeds. |
 | User preferences | — | 0 / 4 | Not implemented | User preference management. |
 | Users | `client.users` | 22 / 22 | Operation-specific authorization | User profiles, employment, and search. |
 

@@ -22,9 +22,9 @@ This document describes the TSOS client, authentication models, errors, and supp
 
 | Class | Construction | Authorization | Services |
 | --- | --- | --- | --- |
-| `UsosClient` | `new UsosClient(options)` | Anonymous or Consumer | `apiref`, `apisrv`, `courses`, `fac`, `groups`, `oauth`, `terms`, `users` |
-| `UserClient` | `client.withAccessToken(accessToken)` | Consumer and user Access Token | Base services with `attendance` and `oauth` endpoint |
-| `AdminClient` | `client.asAdministrator()` | Administrative Consumer | Base services with `oauth` endpoint |
+| `UsosClient` | `new UsosClient(options)` | Anonymous or Consumer | `apiref`, `apisrv`, `calendar`, `courses`, `fac`, `grades`, `groups`, `oauth`, `progs`, `terms`, `tt`, `users` |
+| `UserClient` | `client.withAccessToken(accessToken)` | Consumer and user Access Token | Base services with `attendance` and `oauth` |
+| `AdminClient` | `client.asAdministrator()` | Administrative Consumer | Base services with `oauth`; administrative operations may also require a user Access Token |
 
 ## Client configuration
 
@@ -52,7 +52,7 @@ TSOS validates endpoint requirements before dispatch. The access labels used in 
 | --- | --- | --- | --- |
 | Public | Not required | Not required | Not required |
 | Client authentication | Required | Optional or required, depending on the endpoint | Not required |
-| Administrator authentication | Required | Not required | Required |
+| Administrator authentication | Required | Endpoint-dependent | Required |
 
 ### OAuth 1.0a flow
 
@@ -86,4 +86,3 @@ Consumer secrets, request-token secrets, and Access Token secrets must remain in
 | `UsosAuthenticationError` | Required authentication is missing. | Message |
 | `UsosApiError` | USOS rejected the request. | `status`, `endpoint`, `responseBody`, `responseJson` |
 | `UsosNetworkError` | The request failed, timed out, or was cancelled. | `kind`, `endpoint`, `originalError` |
-
