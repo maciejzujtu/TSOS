@@ -107,4 +107,19 @@ export interface StudentProgrammesParams {
     fields?: readonly StudentProgrammeFields[]
 }
 
+export interface SearchProgrammesOptions {
+    lang: Language
+    fields?: readonly (keyof ProgrammeSearchResult | `items[${string}]`)[]
+    query?: string
+    num?: number
+    start?: number
+}
+
+export interface StudentProgrammesOptions {
+    userId?: UserId
+    fields?: readonly StudentProgrammeFields[]
+    activeOnly?: boolean
+    oldPrograms?: boolean
+}
+
 export type ProgrammeSearchHistoryResponse = SuccessResponse
