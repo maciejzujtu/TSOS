@@ -100,3 +100,55 @@ export interface UpcomingShareParams {
 export interface UpcomingShare {
     webcal_url?: string
 }
+
+export interface TimetableRangeOptions {
+    start?: string
+    days?: number
+    fields?: readonly ActivityFields[]
+}
+
+export interface ClassGroupTimetableOptions extends TimetableRangeOptions {
+    courseUnitId: CourseUnitId
+    groupNumber: number
+}
+
+export interface ClassGroupDatesOptions {
+    courseUnitId: CourseUnitId
+    groupNumber: number
+}
+
+export interface ClassGroupDates2Options extends ClassGroupDatesOptions {
+    fields?: readonly ActivityFields[]
+}
+
+export interface ClassGroupsTimetableOptions extends TimetableRangeOptions {
+    classGroupIds: readonly ClassGroupId[]
+    partial?: boolean
+}
+
+export interface CourseEditionTimetableOptions extends TimetableRangeOptions {
+    courseId: CourseId
+    termId: TermId
+}
+
+export interface CourseEditionsTimetableOptions extends TimetableRangeOptions {
+    courseEditionIds: readonly CourseEditionId[]
+    partial?: boolean
+}
+
+export interface RoomTimetableOptions extends TimetableRangeOptions {
+    roomId: RoomId
+}
+
+export interface StaffTimetableOptions extends TimetableRangeOptions {
+    userId?: UserId
+}
+
+export type StudentTimetableOptions = TimetableRangeOptions
+export type UserTimetableOptions = TimetableRangeOptions
+
+export interface UpcomingIcalOptions {
+    userId: UserId
+    lang: Language
+    key?: string
+}
