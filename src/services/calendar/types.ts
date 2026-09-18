@@ -39,3 +39,10 @@ export interface CalendarSearchParams {
     end_date: string
     fields?: readonly CalendarEventFields[]
 }
+
+export interface SearchCalendarOptions {
+    facultyId: FacultyId
+    startDate: string
+    endDate: string
+    fields?: readonly CalendarEventFields[]
+}
