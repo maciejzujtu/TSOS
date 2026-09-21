@@ -82,7 +82,19 @@ test("packed package installs and exposes a mocked public read-only client", () 
 
         writeFileSync(join(fixtureDirectory, "smoke.mjs"), `
 import assert from "node:assert/strict"
-import { JAGIELLONIAN_UNIVERSITY, UsosClient } from ${JSON.stringify(packageMetadata.name)}
+import {
+    JAGIELLONIAN_UNIVERSITY,
+    UsosClient,
+    calendarEndpoints,
+    gradesEndpoints,
+    progsEndpoints,
+    ttEndpoints,
+} from ${JSON.stringify(packageMetadata.name)}
+
+assert.equal(Object.keys(calendarEndpoints).length, 2)
+assert.equal(Object.keys(gradesEndpoints).length, 11)
+assert.equal(Object.keys(progsEndpoints).length, 8)
+assert.equal(Object.keys(ttEndpoints).length, 12)
 
 const client = new UsosClient({
     baseUrl: JAGIELLONIAN_UNIVERSITY,
