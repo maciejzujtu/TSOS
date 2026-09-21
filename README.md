@@ -179,7 +179,7 @@ TSOS does not automatically retry requests. Mutating operations must not be retr
 | Timetables | `client.tt` | 12 / 12 | All clients; operation-specific authorization | Activity timetables and calendar feeds. |
 | User preferences | — | 0 / 4 | Not implemented | User preference management. |
 | Users | `client.users` | 22 / 22 | Operation-specific authorization | User profiles, employment, and search. |
-
+| **Total USOS API coverage** | — | **116 / 576** | **20.1% implemented** | **460 endpoints remain.** |
 
 Authorization is evaluated for each endpoint. The presence of a module on a client does not imply that every operation is permitted in that client's authorization context.
 
