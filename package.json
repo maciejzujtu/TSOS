@@ -1,5 +1,5 @@
 {
-  "name": "@maciejzujtu/tsos",
+  "name": "@maciejzuj/tsos",
   "version": "0.3.0",
   "description": "TypeScript client for the USOS API.",
   "type": "module",
@@ -29,7 +29,8 @@
   },
   "homepage": "https://github.com/maciejzujtu/TSOS#readme",
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com"
+    "access": "public",
+    "registry": "https://registry.npmjs.org"
   },
   "keywords": [
     "usos",

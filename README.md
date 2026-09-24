@@ -17,19 +17,8 @@ Available methods, scopes, and response fields may differ between installations.
 
 ## Installation
 
-TSOS is not yet available as a published package. In order to actually use the package you must configure it for for distribution through GitHub Packages.
-
-You must configure the `@maciejzujtu` scope before installing a published release:
-
-```ini
-@maciejzujtu:registry=https://npm.pkg.github.com
-//npm.pkg.github.com/:_authToken=${GITHUB_PACKAGES_TOKEN}
-```
-
-The token requires `read:packages` permission.
-
 ```sh
-npm install @maciejzujtu/tsos
+npm install @maciejzuj/tsos
 ```
 
 ## Example usage
@@ -37,7 +26,7 @@ npm install @maciejzujtu/tsos
 Public endpoints do not require credentials:
 
 ```ts
-import { JAGIELLONIAN_UNIVERSITY, UsosClient } from "@maciejzujtu/tsos"
+import { JAGIELLONIAN_UNIVERSITY, UsosClient } from "@maciejzuj/tsos"
 
 const client = new UsosClient({
     baseUrl: JAGIELLONIAN_UNIVERSITY,
@@ -101,7 +90,7 @@ import {
     UsosApiError,
     UsosAuthenticationError,
     UsosNetworkError,
-} from "@maciejzujtu/tsos"
+} from "@maciejzuj/tsos"
 
 try {
     await client.users.getUser()
@@ -188,7 +177,7 @@ Authorization is evaluated for each endpoint. The presence of a module on a clie
 TSOS currently exports a single URL installation for Jagiellonian's University but it is possible to use a different installation as a string to use the client.
 
 ```ts
-import { JAGIELLONIAN_UNIVERSITY } from "@maciejzujtu/tsos"
+import { JAGIELLONIAN_UNIVERSITY } from "@maciejzuj/tsos"
 
 const client = new UsosClient({
     baseUrl: "https://usos.example.edu", // JAGIELLONIAN_UNIVERSITY
