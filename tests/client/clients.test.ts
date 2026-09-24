@@ -8,11 +8,14 @@ import {
     AttendanceService,
     CalendarService,
     CoursesService,
+    ExamsService,
     FacService,
     GradesService,
     GroupsService,
     OAuthService,
+    PaymentsService,
     ProgsService,
+    RegistrationsService,
     TermsService,
     TtService,
     UserClient,
@@ -41,10 +44,13 @@ test("Clients expose services for their authentication context", () => {
     assert.ok(usos.terms instanceof TermsService)
     assert.ok(usos.fac instanceof FacService)
     assert.ok(usos.courses instanceof CoursesService)
+    assert.ok(usos.exams instanceof ExamsService)
     assert.ok(usos.grades instanceof GradesService)
     assert.ok(usos.users instanceof UsersService)
     assert.ok(usos.groups instanceof GroupsService)
+    assert.ok(usos.payments instanceof PaymentsService)
     assert.ok(usos.progs instanceof ProgsService)
+    assert.ok(usos.registrations instanceof RegistrationsService)
     assert.ok(usos.tt instanceof TtService)
     assert.ok(usos.oauth instanceof OAuthService)
     assert.ok(user instanceof UserClient)
