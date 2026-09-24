@@ -22,7 +22,7 @@ This document describes the TSOS client, authentication models, errors, and supp
 
 | Class | Construction | Authorization | Services |
 | --- | --- | --- | --- |
-| `UsosClient` | `new UsosClient(options)` | Anonymous or Consumer | `apiref`, `apisrv`, `calendar`, `courses`, `fac`, `grades`, `groups`, `oauth`, `progs`, `terms`, `tt`, `users` |
+| `UsosClient` | `new UsosClient(options)` | Anonymous or Consumer | `apiref`, `apisrv`, `calendar`, `courses`, `exams`, `fac`, `grades`, `groups`, `oauth`, `payments`, `progs`, `registrations`, `terms`, `tt`, `users` |
 | `UserClient` | `client.withAccessToken(accessToken)` | Consumer and user Access Token | Base services with `attendance` and `oauth` |
 | `AdminClient` | `client.asAdministrator()` | Administrative Consumer | Base services with `oauth`; administrative operations may also require a user Access Token |
 

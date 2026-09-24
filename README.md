@@ -145,7 +145,7 @@ TSOS does not automatically retry requests. Mutating operations must not be retr
 | Events 2 | — | 0 / 27 | Not implemented | Events and notification preferences. |
 | Exam reports | — | 0 / 6 | Not implemented | Exam-report information. |
 | Exam reports 2 | — | 0 / 13 | Not implemented | Extended exam-report operations. |
-| Exams | — | 0 / 17 | Not implemented | Examination registration. |
+| Exams | `client.exams` | 17 / 17 | Operation-specific authorization | Examination registration. |
 | Faculties | `client.fac` | 6 / 6 | All clients | Faculty metadata, hierarchy, and search. |
 | Faculty permissions | — | 0 / 8 | Not implemented | Per-faculty permissions. |
 | File sharing | — | 0 / 3 | Not implemented | File-sharing operations. |
@@ -163,14 +163,14 @@ TSOS does not automatically retry requests. Mutating operations must not be retr
 | News | — | 0 / 4 | Not implemented | University and faculty news. |
 | OAuth | `client.oauth` | 6 / 6 | All client contexts | OAuth 1.0a authorization and tokens. |
 | OAuth 2 | — | 0 / 1 | Not implemented | OAuth 2 provider operations. |
-| Payments | — | 0 / 8 | Not implemented | Student payments. |
+| Payments | `client.payments` | 8 / 8 | `UserClient` | Student payments. |
 | Phones | — | 0 / 4 | Not implemented | Institutional phone numbers. |
 | Photos | — | 0 / 6 | Not implemented | User-photo settings. |
 | PIT declarations | — | 0 / 3 | Not implemented | Polish tax declarations. |
 | Placement tests | — | 0 / 6 | Not implemented | Placement-test registration and results. |
 | Primary groups | — | 0 / 13 | Not implemented | User primary groups. |
 | Study programmes | `client.progs` | 8 / 8 | All clients; operation-specific authorization | Student programme information. |
-| Registrations | — | 0 / 18 | Not implemented | University course registrations. |
+| Registrations | `client.registrations` | 18 / 18 | Operation-specific authorization | University course registrations. |
 | Clearance slips | — | 0 / 27 | Not implemented | Student clearance slips. |
 | Statements | — | 0 / 7 | Not implemented | Electronic statements and signatures. |
 | Surveys | — | 0 / 10 | Not implemented | Satisfaction surveys. |
@@ -179,7 +179,7 @@ TSOS does not automatically retry requests. Mutating operations must not be retr
 | Timetables | `client.tt` | 12 / 12 | All clients; operation-specific authorization | Activity timetables and calendar feeds. |
 | User preferences | — | 0 / 4 | Not implemented | User preference management. |
 | Users | `client.users` | 22 / 22 | Operation-specific authorization | User profiles, employment, and search. |
-| **Total USOS API coverage** | — | **116 / 576** | **20.1% implemented** | **460 endpoints remain.** |
+| **Total USOS API coverage** | — | **159 / 576** | **27.6% implemented** | **417 endpoints remain.** |
 
 Authorization is evaluated for each endpoint. The presence of a module on a client does not imply that every operation is permitted in that client's authorization context.
 
