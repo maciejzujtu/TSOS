@@ -127,13 +127,13 @@ TSOS does not automatically retry requests. Mutating operations must not be retr
 | Cards | — | 0 / 12 | Not implemented | Student and employee ID cards. |
 | Courses | `client.courses` | 17 / 17 | All clients | Courses, editions, units, roles, and ECTS data. |
 | Credits | — | 0 / 2 | Not implemented | Study-credit information. |
-| Course tests | — | 0 / 54 | Not implemented | Course tests and results. |
+| Course tests | `client.crstests` | 54 / 54 | Operation-specific authorization | Course tests, grading nodes, results, and updates. |
 | User-defined groups | — | 0 / 6 | Not implemented | User-created groups. |
 | EMREX | — | 0 / 4 | Not implemented | Student mobility through EMREX. |
 | Events | — | 0 / 7 | Not implemented | Event subscriptions. |
 | Events 2 | — | 0 / 27 | Not implemented | Events and notification preferences. |
-| Exam reports | — | 0 / 6 | Not implemented | Exam-report information. |
-| Exam reports 2 | — | 0 / 13 | Not implemented | Extended exam-report operations. |
+| Exam reports | `client.examrep` | 6 / 6 | Operation-specific authorization | Exam-report information. |
+| Exam reports 2 | `client.examrep2` | 13 / 13 | Operation-specific authorization | Exam reports, grades, and updates. |
 | Exams | `client.exams` | 17 / 17 | Operation-specific authorization | Examination registration. |
 | Faculties | `client.fac` | 6 / 6 | All clients | Faculty metadata, hierarchy, and search. |
 | Faculty permissions | — | 0 / 8 | Not implemented | Per-faculty permissions. |
@@ -164,11 +164,11 @@ TSOS does not automatically retry requests. Mutating operations must not be retr
 | Statements | — | 0 / 7 | Not implemented | Electronic statements and signatures. |
 | Surveys | — | 0 / 10 | Not implemented | Satisfaction surveys. |
 | Academic terms | `client.terms` | 4 / 4 | All clients | Academic term search and retrieval. |
-| Theses | — | 0 / 11 | Not implemented | Theses and diplomas. |
+| Theses | `client.theses` | 11 / 11 | Operation-specific authorization | Theses, reports, search, and signatures. |
 | Timetables | `client.tt` | 12 / 12 | All clients; operation-specific authorization | Activity timetables and calendar feeds. |
 | User preferences | — | 0 / 4 | Not implemented | User preference management. |
 | Users | `client.users` | 22 / 22 | Operation-specific authorization | User profiles, employment, and search. |
-| **Total USOS API coverage** | — | **159 / 576** | **27.6% implemented** | **417 endpoints remain.** |
+| **Total USOS API coverage** | — | **243 / 576** | **42.2% implemented** | **333 endpoints remain.** |
 
 Authorization is evaluated for each endpoint. The presence of a module on a client does not imply that every operation is permitted in that client's authorization context.
 
