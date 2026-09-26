@@ -86,20 +86,28 @@ import {
     JAGIELLONIAN_UNIVERSITY,
     UsosClient,
     calendarEndpoints,
+    crstestsEndpoints,
+    examrepEndpoints,
+    examrep2Endpoints,
     examsEndpoints,
     gradesEndpoints,
     paymentsEndpoints,
     progsEndpoints,
     registrationsEndpoints,
+    thesesEndpoints,
     ttEndpoints,
 } from ${JSON.stringify(packageMetadata.name)}
 
 assert.equal(Object.keys(calendarEndpoints).length, 2)
+assert.equal(Object.keys(crstestsEndpoints).length, 54)
+assert.equal(Object.keys(examrepEndpoints).length, 6)
+assert.equal(Object.keys(examrep2Endpoints).length, 13)
 assert.equal(Object.keys(examsEndpoints).length, 17)
 assert.equal(Object.keys(gradesEndpoints).length, 11)
 assert.equal(Object.keys(paymentsEndpoints).length, 8)
 assert.equal(Object.keys(progsEndpoints).length, 8)
 assert.equal(Object.keys(registrationsEndpoints).length, 18)
+assert.equal(Object.keys(thesesEndpoints).length, 11)
 assert.equal(Object.keys(ttEndpoints).length, 12)
 
 const client = new UsosClient({
