@@ -8,6 +8,9 @@ import {
     AttendanceService,
     CalendarService,
     CoursesService,
+    CrstestsService,
+    ExamrepService,
+    Examrep2Service,
     ExamsService,
     FacService,
     GradesService,
@@ -17,6 +20,7 @@ import {
     ProgsService,
     RegistrationsService,
     TermsService,
+    ThesesService,
     TtService,
     UserClient,
     UsersService,
@@ -44,6 +48,9 @@ test("Clients expose services for their authentication context", () => {
     assert.ok(usos.terms instanceof TermsService)
     assert.ok(usos.fac instanceof FacService)
     assert.ok(usos.courses instanceof CoursesService)
+    assert.ok(usos.crstests instanceof CrstestsService)
+    assert.ok(usos.examrep instanceof ExamrepService)
+    assert.ok(usos.examrep2 instanceof Examrep2Service)
     assert.ok(usos.exams instanceof ExamsService)
     assert.ok(usos.grades instanceof GradesService)
     assert.ok(usos.users instanceof UsersService)
@@ -52,6 +59,7 @@ test("Clients expose services for their authentication context", () => {
     assert.ok(usos.progs instanceof ProgsService)
     assert.ok(usos.registrations instanceof RegistrationsService)
     assert.ok(usos.tt instanceof TtService)
+    assert.ok(usos.theses instanceof ThesesService)
     assert.ok(usos.oauth instanceof OAuthService)
     assert.ok(user instanceof UserClient)
     assert.ok(user.attendance instanceof AttendanceService)
