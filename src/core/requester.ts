@@ -12,6 +12,8 @@ import { OAuth1Signer } from '@/core/oauth1Signer'
 
 export interface RequestOptions<Params> {
     params?: Params
+    /** Raw POST body. Use FormData for uploads and set Content-Type for JSON bodies. */
+    body?: BodyInit
     headers?: HeadersInit
     signal?: AbortSignal
     timeoutMs?: number
@@ -96,6 +98,7 @@ export class HttpRequester<Auth extends AuthContext> implements RequestExecutor 
             const response = await this.fetchImplementation(url, {
                 method: endpoint.method,
                 headers,
+                body: options.body,
                 signal: abortState.signal,
             })
 
