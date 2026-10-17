@@ -89,26 +89,38 @@ import {
     crstestsEndpoints,
     examrepEndpoints,
     examrep2Endpoints,
+    eventsEndpoints,
+    events2Endpoints,
     examsEndpoints,
     gradesEndpoints,
+    newsEndpoints,
     paymentsEndpoints,
+    phonesEndpoints,
+    photosEndpoints,
     progsEndpoints,
     registrationsEndpoints,
     thesesEndpoints,
     ttEndpoints,
+    uprefsEndpoints,
 } from ${JSON.stringify(packageMetadata.name)}
 
 assert.equal(Object.keys(calendarEndpoints).length, 2)
 assert.equal(Object.keys(crstestsEndpoints).length, 54)
 assert.equal(Object.keys(examrepEndpoints).length, 6)
 assert.equal(Object.keys(examrep2Endpoints).length, 13)
+assert.equal(Object.keys(eventsEndpoints).length, 7)
+assert.equal(Object.keys(events2Endpoints).length, 27)
 assert.equal(Object.keys(examsEndpoints).length, 17)
 assert.equal(Object.keys(gradesEndpoints).length, 11)
+assert.equal(Object.keys(newsEndpoints).length, 4)
 assert.equal(Object.keys(paymentsEndpoints).length, 8)
+assert.equal(Object.keys(phonesEndpoints).length, 4)
+assert.equal(Object.keys(photosEndpoints).length, 6)
 assert.equal(Object.keys(progsEndpoints).length, 8)
 assert.equal(Object.keys(registrationsEndpoints).length, 18)
 assert.equal(Object.keys(thesesEndpoints).length, 11)
 assert.equal(Object.keys(ttEndpoints).length, 12)
+assert.equal(Object.keys(uprefsEndpoints).length, 4)
 
 const client = new UsosClient({
     baseUrl: JAGIELLONIAN_UNIVERSITY,

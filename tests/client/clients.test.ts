@@ -12,16 +12,22 @@ import {
     ExamrepService,
     Examrep2Service,
     ExamsService,
+    EventsService,
+    Events2Service,
     FacService,
     GradesService,
     GroupsService,
+    NewsService,
     OAuthService,
     PaymentsService,
+    PhonesService,
+    PhotosService,
     ProgsService,
     RegistrationsService,
     TermsService,
     ThesesService,
     TtService,
+    UprefsService,
     UserClient,
     UsersService,
     UsosAuthenticationError,
@@ -52,14 +58,20 @@ test("Clients expose services for their authentication context", () => {
     assert.ok(usos.examrep instanceof ExamrepService)
     assert.ok(usos.examrep2 instanceof Examrep2Service)
     assert.ok(usos.exams instanceof ExamsService)
+    assert.ok(usos.events instanceof EventsService)
+    assert.ok(usos.events2 instanceof Events2Service)
     assert.ok(usos.grades instanceof GradesService)
     assert.ok(usos.users instanceof UsersService)
     assert.ok(usos.groups instanceof GroupsService)
+    assert.ok(usos.news instanceof NewsService)
     assert.ok(usos.payments instanceof PaymentsService)
+    assert.ok(usos.phones instanceof PhonesService)
+    assert.ok(usos.photos instanceof PhotosService)
     assert.ok(usos.progs instanceof ProgsService)
     assert.ok(usos.registrations instanceof RegistrationsService)
     assert.ok(usos.tt instanceof TtService)
     assert.ok(usos.theses instanceof ThesesService)
+    assert.ok(usos.uprefs instanceof UprefsService)
     assert.ok(usos.oauth instanceof OAuthService)
     assert.ok(user instanceof UserClient)
     assert.ok(user.attendance instanceof AttendanceService)
